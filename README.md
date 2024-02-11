@@ -15,8 +15,6 @@ This thesis project focuses on addressing the challenges of Named Entity Recogni
 3. [Dataset](#dataset)
 4. [Usage](#usage)
 5. [Results](#results)
-6. [Contributing](#contributing)
-7. [License](#license)
 
 ## Introduction
 
@@ -38,10 +36,4 @@ To replicate the project, clone the GitHub repository, follow the provided instr
 
 The key findings highlight the effectiveness of FVT in reducing model size without significant performance compromise. The thesis provides comprehensive insights into the performance of adapted LLMs, emphasizing the practicality of FVT in domain-specific NLP applications.
 
-## Contributing
 
-Contributions to this project are welcome! Feel free to submit issues, feature requests, or pull requests. Please follow the guidelines outlined in the contribution documentation.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
