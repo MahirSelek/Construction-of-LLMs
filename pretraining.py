@@ -1,9 +1,8 @@
 #Import Libraries
-
 import os
 import wandb
-wandb.login(key="3e9194b5cb8ecdb81a164b5a2ec148cef7c8801e")
-wandb.init(project='mlm_vt_bert', name='mlm_vt_bert')
+wandb.login(key="login_key")
+wandb.init(project='project_name', name='specific_name')
 
 
 import torch
@@ -18,13 +17,13 @@ from datasets import load_dataset
 
 
 
-train1 = load_dataset('json', data_files = '/home/mselek/Ner/BUSTER-Gold-5Fold/Gold/json/chunked/FOLD_1.json' )
-train2 = load_dataset('json', data_files = '/home/mselek/Ner/BUSTER-Gold-5Fold/Gold/json/chunked/FOLD_2.json' )
-train3 = load_dataset('json', data_files = '/home/mselek/Ner/BUSTER-Gold-5Fold/Gold/json/chunked/FOLD_3.json' )
+train1 = load_dataset('json', data_files = 'FOLD_1.json' )
+train2 = load_dataset('json', data_files = 'FOLD_2.json' )
+train3 = load_dataset('json', data_files = 'FOLD_3.json' )
 #silver_dataset = load_dataset('json', data_files = '/home/mselek/Ner/silver.json' )
 
-validation_dataset = load_dataset('json', data_files = '/home/mselek/Ner/BUSTER-Gold-5Fold/Gold/json/chunked/FOLD_4.json' )
-test_dataset = load_dataset('json', data_files = '/home/mselek/Ner/BUSTER-Gold-5Fold/Gold/json/chunked/FOLD_5.json' )
+validation_dataset = load_dataset('json', data_files = 'FOLD_4.json' )
+test_dataset = load_dataset('json', data_files = 'FOLD_5.json' )
 
 # %%
 
@@ -51,7 +50,7 @@ merged_dataset = concatenate_datasets([train_dataset1['train'], train_dataset2['
 #tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME, add_prefix_space = True, model_max_length=256)
 
 
-model_directory ='/home/mselek/Ner/bert_vt_model'
+model_directory ='bert-base-uncased'
 model = BertForMaskedLM.from_pretrained(model_directory)
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', add_prefix_space = True, model_max_length=512)
 
